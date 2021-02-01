@@ -1,3 +1,6 @@
 [submodule "yolov5"]
 	path = ObjectDetection/yolov5
 	url = https://github.com/ultralytics/yolov5.git
+[submodule "ObjectDetection/yolov5"]
+	path = ObjectDetection/yolov5
+	url = https://github.com/ultralytics/yolov5.git
