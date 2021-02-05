@@ -6,18 +6,24 @@ My GDrive with some data to download can be found [here](https://drive.google.co
 Folder architecture:
 ```
 AR-Chess_Beta\ObjectDetection
-├── data
-│   ├── final_test                # Videos to run to test the final model on
+├── data                          # Data folder
+│   ├── _final_test                 # Videos to test the final model on
 │   │   └── *.mp4
-│   ├── roboflow_416x416_default  # Roboflow chess dataset in yolov5 format
-│   └── chess.yaml                # Data file for the training
+│   ├── 0_roboflow_416x416_default  # Roboflow chess dataset in yolov5 format
+│   │   ├── test                      # Test set folder
+│   │   ├── train                     # Train set folder
+│   │   ├── valid                     # Validation set folder
+│   │   ├── ...
+│   │   └── labels_distribution.png   # Labels distribution within this set
+│   ├── x_xxx                       # Other custom made dataset
+│   └── chess.yaml                  # Data file for the training
 ├── utils                         # Some utils scripts
 │   └── *.py
 ├── yolov5                        # Forked ultralytics/yolov5 repo
 │   ├── ...
-│   ├── runs                      # Outputs of the train, test and detect scripts
+│   ├── runs                        # Outputs of the train, test and detect scripts
 │   ├── ...
-│   └── yolov5s.pt                # Pre-trained YoloV5s weights
+│   └── yolov5s.pt                  # Pre-trained YoloV5s weights
 └── README.md
 
 ```
