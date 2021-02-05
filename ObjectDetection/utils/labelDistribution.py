@@ -22,6 +22,7 @@ def autolabel(ax, rects, offset, percent=False):
                 fontsize='x-small',
                 ha='center', va='bottom')
 
+# Matplotlib bars plot
 def save_bars_plot(data, legends, ylabel, path, title, percent=False):
     ind = np.arange(len(_cls))
     width = 0.8 / len(legends)
@@ -55,6 +56,7 @@ def save_bars_plot(data, legends, ylabel, path, title, percent=False):
     plt.close(fig)
     print(f'  {path}/{title}.png saved...')
 
+# Default dictionnary which holds data counters
 def create_data_counter(path):
     data_counter = {}
     data_counter['path_to_data'] = path
@@ -63,6 +65,7 @@ def create_data_counter(path):
     data_counter['count'] = [0 for i in range(len(_cls))]
     return data_counter
 
+# Count the label within a folder of txt files in yolov5 pytorch format
 def count_labels(path_labels):
     data_counter = create_data_counter(path_labels)
 
@@ -79,6 +82,7 @@ def count_labels(path_labels):
 
     return data_counter
 
+# Merge the counter of the data_folder holder
 def merge_data_folder(data_folder, path):
     merged_counter = create_data_counter(path)
 
@@ -90,11 +94,15 @@ def merge_data_folder(data_folder, path):
 
     return merged_counter
 
+# Analyse the given folder by checking its subdirectories
 def analyse_folder(path):
+    # Holder of the data info in the folder
     data_folder = {}
 
-    plt_labels=[]
+    # List of the _typeSet subdirectories analysed
+    plt_labels = []
 
+    # Go through all the _typeSet subdirectories
     for subdirectory in _typeSet:
         path_subdirectory = os.path.join(path_directory, subdirectory)
 
@@ -109,8 +117,10 @@ def analyse_folder(path):
 
         print(f'  {subdirectory}...')
 
+        # Count the labels of this subdirectory
         data_folder[subdirectory] = count_labels(path_subdirectory_labels)
 
+        # This subdirectory has been analysed
         plt_labels.append(subdirectory)
 
     if len(plt_labels) > 0:
@@ -133,7 +143,10 @@ if __name__ == '__main__':
         print(f'The path to the data "{_path_data}" doesn\'t exists...')
         exit()
 
+    # Holder of all the data info
     data_all = {}
+
+    # List of the subdirectories with labels inside
     plt_directories = []
 
     for directory in os.listdir(_path_data):
@@ -145,8 +158,10 @@ if __name__ == '__main__':
 
         print(f'Directory {path_directory}...')
 
+        # Analyse the folder
         data_folder = analyse_folder(path_directory)
         if len(data_folder) > 0:
+            # This folder contains info, merge the counters
             data_all[directory] = merge_data_folder(data_folder, path_directory)
             plt_directories.append(directory)
 
