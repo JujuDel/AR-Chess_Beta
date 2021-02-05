@@ -56,6 +56,38 @@ def save_bars_plot(data, legends, ylabel, path, title, percent=False):
     plt.close(fig)
     print(f'  {path}/{title}.png saved...')
 
+# All the counter info in a txt file
+def save_bars_txt(data, path, title):
+    # Extact the name of the folder
+    name = path[path.find(_path_data)+len(_path_data)+1:].replace('\\', '/')
+    if '/' in name: name = name[:name.find('/')]
+
+    maxLen = len(max(_cls, key=lambda x:len(x))) + 2
+
+    # Merge the inner data together
+    merged_data = merge_data_folder(data, name)
+
+    with open(os.path.join(path,f'{title}.txt'), 'w') as file:
+        if name != '': file.write(f'{name}:\n')
+        file.write(f'\tnb_files........: {merged_data["nb_files"]}\n')
+        file.write(f'\ttot_boxes.......: {merged_data["tot_boxes"]}\n')
+        for i in range(len(_cls)):
+            file.write(f'\t\t{_cls[i]}' +
+                       '.'*(maxLen-len(_cls[i])) +
+                       f': {merged_data["count"][i]}' +
+                       '\t{:.2f}%\n'.format(100 * merged_data["count"][i] / merged_data["tot_boxes"]))
+
+        for subdir, data_counter in data.items():
+            file.write(f'{subdir}:\n')
+            file.write(f'\tpath_to_labels..: {data_counter["path_to_data"]}\n')
+            file.write(f'\tnb_files........: {data_counter["nb_files"]}\n')
+            file.write(f'\ttot_boxes.......: {data_counter["tot_boxes"]}\n')
+            for i in range(len(_cls)):
+                file.write(f'\t\t{_cls[i]}' +
+                           '.'*(maxLen-len(_cls[i])) +
+                           f': {data_counter["count"][i]}' +
+                           '\t{:.2f}%\n'.format(100 * data_counter["count"][i] / data_counter["tot_boxes"]))
+
 # Default dictionnary which holds data counters
 def create_data_counter(path):
     data_counter = {}
@@ -136,6 +168,10 @@ def analyse_folder(path):
                        path=path, title='labels_distribution',
                        percent=False)
 
+        # Dump the data
+        save_bars_txt(data=data_folder, path=path,
+                      title='labels_distribution')
+
     return data_folder
 
 if __name__ == '__main__':
@@ -180,5 +216,9 @@ if __name__ == '__main__':
                    ylabel='# of appearances within each directories',
                    path=_path_data, title='labels_distribution',
                    percent=False)
+
+    # Dump the data
+    save_bars_txt(data=data_all, path=_path_data,
+                  title='labels_distribution')
 
     print('Done')
