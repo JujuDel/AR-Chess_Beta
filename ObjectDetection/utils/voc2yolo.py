@@ -75,7 +75,7 @@ def convert_annotation(path_in, folder_out, labels):
 
             if i != 0:
                 out_file.write('\n')
-            out_file.write(f'{cls_id} {xmin} {ymin} {xmax} {ymax}')
+            out_file.write(f'{cls_id} {xmin} {ymin} {xmax - xmin} {ymax - ymin}')
 
         out_file.close()
     except:
