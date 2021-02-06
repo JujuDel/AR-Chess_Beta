@@ -10,7 +10,7 @@ from tqdm import tqdm
 def read_args():
     parser = argparse.ArgumentParser(description='PascalVOC to YOLO format converter.')
     parser.add_argument('--label', type=str, required=True,
-                        help='directory of label folder or label file path')
+                        help='label directory or label file')
     parser.add_argument('--output', type=str, required=True,
                         help='output directory')
     parser.add_argument('--cls', type=str, required=True,
