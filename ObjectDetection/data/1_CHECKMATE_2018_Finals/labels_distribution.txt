@@ -1,0 +1,31 @@
+1_CHECKMATE_2018_Finals:
+	nb_files........: 7
+	tot_boxes.......: 220
+		black-bishop..: 13	5.91%
+		black-king....: 7	3.18%
+		black-knight..: 14	6.36%
+		black-pawn....: 57	25.91%
+		black-queen...: 7	3.18%
+		black-rook....: 12	5.45%
+		white-bishop..: 13	5.91%
+		white-king....: 7	3.18%
+		white-knight..: 14	6.36%
+		white-pawn....: 56	25.45%
+		white-queen...: 7	3.18%
+		white-rook....: 13	5.91%
+.:
+	path_to_labels..: data\1_CHECKMATE_2018_Finals\.\labels
+	nb_files........: 7
+	tot_boxes.......: 220
+		black-bishop..: 13	5.91%
+		black-king....: 7	3.18%
+		black-knight..: 14	6.36%
+		black-pawn....: 57	25.91%
+		black-queen...: 7	3.18%
+		black-rook....: 12	5.45%
+		white-bishop..: 13	5.91%
+		white-king....: 7	3.18%
+		white-knight..: 14	6.36%
+		white-pawn....: 56	25.45%
+		white-queen...: 7	3.18%
+		white-rook....: 13	5.91%

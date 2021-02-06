@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 _path_data = 'data'
 
-_typeSet = ['train', 'test', 'valid']
+_typeSet = ['.', 'train', 'test', 'valid']
 
 _cls = ['black-bishop', 'black-king', 'black-knight', 'black-pawn', 'black-queen', 'black-rook',
         'white-bishop', 'white-king', 'white-knight', 'white-pawn', 'white-queen', 'white-rook']
@@ -144,10 +144,10 @@ def analyse_folder(path):
 
         path_subdirectory_labels = os.path.join(path_subdirectory, 'labels')
         if not os.path.exists(path_subdirectory_labels):
-            print(f'  - Subdirectory "{subdirectory}" doesn\'t contain a folder "labels"! Ignoring it...')
+            print(f'  - Subdirectory "{subdirectory}/" doesn\'t contain a folder "labels"! Ignoring it...')
             continue
 
-        print(f'  {subdirectory}...')
+        print(f'  - "{subdirectory}/"...')
 
         # Count the labels of this subdirectory
         data_folder[subdirectory] = count_labels(path_subdirectory_labels)
