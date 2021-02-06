@@ -79,7 +79,6 @@ def convert_annotation(path_in, folder_out, labels):
 
         out_file.close()
     except:
-        print('FUCK')
         out_file.close()
         raise
 
