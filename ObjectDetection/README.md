@@ -28,25 +28,35 @@ AR-Chess_Beta\ObjectDetection
 
 ```
 
-### Training
+## Utils
+
+#### Convert from voc 2 yolo
 
 ```bash
-(myEnv) $ python train.py --weights "./yolov5s.pt" --model "./model/yolov5s.yaml" --data "../data/chess.yaml" 
+(myEnv) $ python utils\voc2yolo.py --label data\1_CHECKMATE_2018_Finals\labels\labelImg --output data\1_CHECKMATE_2018_Finals\labels --cls data\1_CHECKMATE_2018_Finals\labels\labelImg\classes.txt
 ```
 
-### Tensorboard
+## YOLOv5
+
+#### Training
+
+```bash
+(myEnv) $ python train.py --weights "./yolov5s.pt" --model "./model/yolov5s.yaml" --data "../data/chess.yaml"
+```
+
+#### Tensorboard
 
 ```bash
 (myEnv) $ tensorboard --logdir=runs
 ```
 
-### GPUStat
+#### GPUStat
 
 ```bash
 (myEnv) $ gpustat --watch -cp
 ```
 
-### Predict
+#### Predict
 
 ```bash
 (myEnv) $ python detect.py --weights "./runs/default/train/weights/best.pt" --source "../data/final_test/shortest_game_magnus_cropped.mp4"
