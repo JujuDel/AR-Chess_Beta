@@ -1,17 +1,17 @@
-	nb_files........: 301
-	tot_boxes.......: 3242
-		black-bishop..: 162	5.00%
-		black-king....: 159	4.90%
-		black-knight..: 218	6.72%
-		black-pawn....: 753	23.23%
-		black-queen...: 99	3.05%
-		black-rook....: 222	6.85%
-		white-bishop..: 194	5.98%
-		white-king....: 161	4.97%
-		white-knight..: 208	6.42%
-		white-pawn....: 736	22.70%
-		white-queen...: 122	3.76%
-		white-rook....: 208	6.42%
+	nb_files........: 304
+	tot_boxes.......: 3333
+		black-bishop..: 167	5.01%
+		black-king....: 162	4.86%
+		black-knight..: 223	6.69%
+		black-pawn....: 775	23.25%
+		black-queen...: 102	3.06%
+		black-rook....: 228	6.84%
+		white-bishop..: 199	5.97%
+		white-king....: 164	4.92%
+		white-knight..: 214	6.42%
+		white-pawn....: 760	22.80%
+		white-queen...: 125	3.75%
+		white-rook....: 214	6.42%
 0_roboflow_416x416_default:
 	path_to_labels..: data\0_roboflow_416x416_default
 	nb_files........: 289
@@ -30,17 +30,17 @@
 		white-rook....: 184	6.41%
 1_CHECKMATE_2018_Finals:
 	path_to_labels..: data\1_CHECKMATE_2018_Finals
-	nb_files........: 12
-	tot_boxes.......: 372
-		black-bishop..: 21	5.65%
-		black-king....: 12	3.23%
-		black-knight..: 22	5.91%
-		black-pawn....: 94	25.27%
-		black-queen...: 12	3.23%
-		black-rook....: 21	5.65%
-		white-bishop..: 22	5.91%
-		white-king....: 12	3.23%
-		white-knight..: 24	6.45%
-		white-pawn....: 97	26.08%
-		white-queen...: 11	2.96%
-		white-rook....: 24	6.45%
+	nb_files........: 15
+	tot_boxes.......: 463
+		black-bishop..: 26	5.62%
+		black-king....: 15	3.24%
+		black-knight..: 27	5.83%
+		black-pawn....: 116	25.05%
+		black-queen...: 15	3.24%
+		black-rook....: 27	5.83%
+		white-bishop..: 27	5.83%
+		white-king....: 15	3.24%
+		white-knight..: 30	6.48%
+		white-pawn....: 121	26.13%
+		white-queen...: 14	3.02%
+		white-rook....: 30	6.48%
